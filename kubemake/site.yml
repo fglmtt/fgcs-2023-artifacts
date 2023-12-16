@@ -1,0 +1,45 @@
+---
+- hosts: all
+  become: yes
+  tags:
+  - setup
+  roles:
+  - common
+  - crio
+  - k8s/common
+
+- hosts: masters
+  become: yes
+  tags:
+  - init
+  roles:
+  - k8s/init
+  - flannel
+
+- hosts: workers
+  become: yes
+  tags:
+  - join
+  roles:
+  - k8s/join
+
+- hosts: masters
+  become: no
+  tags:
+  - mesh
+  roles:
+  - istio
+
+- hosts: masters
+  become: no
+  tags:
+  - telemetry
+  roles:
+  - istio/addons
+
+- hosts: masters
+  become: no
+  tags:
+  - chaos
+  roles:
+  - chaos-mesh

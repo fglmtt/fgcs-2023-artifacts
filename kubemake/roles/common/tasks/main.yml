@@ -1,0 +1,11 @@
+---
+- name: Install packages needed to use the K8s apt repository
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+    - apt-transport-https
+    - ca-certificates
+    - curl

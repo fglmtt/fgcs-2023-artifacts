@@ -1,0 +1,28 @@
+---
+- name: Reset the control plane node
+  shell: kubeadm reset --force
+
+- name: Reset iptables
+  shell: |
+    iptables -F
+    iptables -t nat -F
+    iptables -t mangle -F
+    iptables -X
+
+- name: Delete ~/.kube/directory
+  become: no
+  file:
+    path: $HOME/.kube
+    state: absent
+
+- name: Uninstall packages needed to use community.kubernetes collection
+  block:
+  - name: Uninstall openshift Python package
+    pip:
+      name: openshift
+      state: absent
+
+  - name: Uninstall python3-pip
+    apt:
+      name: python3-pip
+      state: absent

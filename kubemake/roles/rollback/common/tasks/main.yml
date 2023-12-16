@@ -1,0 +1,10 @@
+---
+- name: Uninstall packages needed to use the K8s apt repository
+  apt:
+    name: "{{ packages }}"
+    state: absent
+  vars:
+    packages:
+    - apt-transport-https
+    - ca-certificates
+    - curl
