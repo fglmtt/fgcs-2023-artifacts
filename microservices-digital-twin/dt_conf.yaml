@@ -1,0 +1,8 @@
+#Digital Twin Configuration
+
+digitalTwinId: "testDT1"
+# brokerIp: "127.0.0.1"
+# brokerIp: "192.168.101.88"
+# brokerIp: "192.168.1.111"
+brokerIp: "192.168.1.114"
+brokerPort: 1883
