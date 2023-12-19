@@ -1,0 +1,15 @@
+#IIoT Device Configuration
+
+deviceId: testDevice2
+httpApiPort: 5555
+targetMqttBrokerAddress: 192.168.1.17
+targetMqttBrokerPort: 1883
+updatePeriodMs: 1000
+updateInitialDelayMs: 2000
+aggregatedTelemetry: true
+aggregatedTelemetryMsgSec: 1
+singleResourceTelemetryEnabled: false
+targetAggregatedTelemetryPayloadSizeByte: 1
+resourceMap:
+  energy: iot.sensor.energy
+  temperature: iot.sensor.temperature
