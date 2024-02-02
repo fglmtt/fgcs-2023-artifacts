@@ -401,7 +401,7 @@ fission route create \
 fission route create \
     --name shadow-handler \
     --method POST \
-    --url /pendingdigitalstates \
+    --url /physicalstates \
     --function shadow-handler
 
 fission route create \
