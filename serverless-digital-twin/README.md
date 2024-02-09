@@ -224,7 +224,7 @@ spec:
 kubectl apply -f physical-broker.yml
 ```
 
-Deploy an IIoT device that publishes physical events ([here](iiot-device/README.md) the instructions to build the container image):
+Deploy an IIoT device that publishes physical events ([here](../iiot-device/README.md) the instructions to build the container image):
 
 `iiot-device-1.yml`
 ```yaml
